@@ -34,7 +34,7 @@ class GameScene: SKScene,DiceGameDelegate {
         skyColor = SKColor(red: 81.0/255.0, green: 192.0/255.0, blue: 201.0/255.0, alpha: 1.0)
         self.backgroundColor = skyColor
         //背景图片，游戏图表
-        var skyTexture = SKTexture(imageNamed: "snake")
+        var skyTexture = SKTexture(imageNamed: "board")
         
         spriteBoard = SKSpriteNode(texture:skyTexture)
         spriteBoard.position = CGPointMake(self.frame.size.width/2,spriteBoard.size.height/2+150)
@@ -53,7 +53,7 @@ class GameScene: SKScene,DiceGameDelegate {
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height-100);
         
         self.addChild(myLabel)
-        
+
         
         //飞机
         spriteShip = SKSpriteNode(imageNamed:"Spaceship")

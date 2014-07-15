@@ -56,6 +56,12 @@ class GameViewController: UIViewController {
             btn.frame = CGRect(x:screen.bounds.size.width/2-50, y:screen.bounds.size.height-100,width:100,height:50)
             
             btn.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+            /*
+            btn.setTitle("RESTART",forState: .Normal)
+            btn.backgroundColor = UIColor.redColor()
+            btn.frame = CGRect(x:screen.bounds.size.width/2-50, y:screen.bounds.size.height-100,width:100,height:50)
+            */
+
             skView.addSubview(btn)
             gameScene = scene
         }
