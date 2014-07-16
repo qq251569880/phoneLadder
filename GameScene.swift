@@ -75,10 +75,10 @@ class GameScene: SKScene,DiceGameDelegate {
         //它的初始位置是25格的最左最下的方格。计算方法是以25格图中心点为参考，向左移动两格，向下移动两格，即第一个方格。
         spriteShip.position = CGPointMake(boardP.x-boardSize.width/5*2,spriteBoard.position.y-boardSize.height/5*2)
         self.addChild(spriteShip)
-        //给game的delegate赋值并开始游戏
+        //给game添加游戏代理并开始游戏
         game.delegate = self
         game.start()
-        //添加游戏的代理，并设置飞船在每一个点的位置和朝向
+        //设置飞船在每一个点的位置和朝向
         var distanceX = boardSize.width/5
         var distanceY = boardSize.height / 5
         //以第一个点为参考坐标

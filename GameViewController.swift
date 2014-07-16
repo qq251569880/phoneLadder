@@ -25,6 +25,7 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
+    //添加按钮
     var btn:UIButton = UIButton()
     var gameScene:GameScene?
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
+            //设置按钮
             scene.scaleMode = .AspectFill
 
             skView.presentScene(scene)
@@ -54,7 +56,7 @@ class GameViewController: UIViewController {
             btn.setBackgroundImage(image,forState: .Normal)
             
             btn.frame = CGRect(x:screen.bounds.size.width/2-50, y:screen.bounds.size.height-100,width:100,height:50)
-            
+            //添加响应方法
             btn.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
             /*
             btn.setTitle("RESTART",forState: .Normal)
@@ -87,7 +89,9 @@ class GameViewController: UIViewController {
         print("A button was clicked: \(sender).")
         if let scene = gameScene? {
             println("board width:\(scene.spriteBoard.size.width),height:\(scene.spriteBoard.size.height)")
+            //获得一个UIAlertController
             var alert = scene.gameRestartAsk()
+            //只有ViewController才能显示该ALert
             presentViewController(alert, animated: true, completion: nil)
 
         }
