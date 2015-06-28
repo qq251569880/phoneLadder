@@ -44,7 +44,7 @@ class GameScene: SKScene,DiceGameDelegate {
         skyColor = SKColor(red: 81.0/255.0, green: 192.0/255.0, blue: 201.0/255.0, alpha: 1.0)
         self.backgroundColor = skyColor
         //添加背景图片，蛇和梯子的25格图
-        var skyTexture = SKTexture(imageNamed: "board")
+        var skyTexture = SKTexture(imageNamed: "snake")
         //设置大小和位置
         spriteBoard = SKSpriteNode(texture:skyTexture)
         //它的位置是左右居中。Scene的Y轴是由下至上的，所以是屏幕高度除以2+150，即中间靠上的位置
@@ -132,7 +132,7 @@ class GameScene: SKScene,DiceGameDelegate {
     
     //直线前进，从start直接启动到step
     func straightMove(start:Int,end:Int) -> SKAction {
-        var actionList:SKAction[] = []
+        var actionList:[SKAction] = []
         //取得移动的x,y长度，求出斜边的长度，通过反cos函数，求得角度（画图研究下吧，别说上学学的东西都用不到了，我是真费了半天的劲）
         var x = pointsPosition[end]!.pointPosition.x - pointsPosition[start]!.pointPosition.x
         
@@ -176,7 +176,7 @@ class GameScene: SKScene,DiceGameDelegate {
     {
         var end = start+step
         println("step from \(start) to \(end)")
-        var actionList:SKAction[] = []
+        var actionList:[SKAction] = []
         
         for i in start..end {
             
